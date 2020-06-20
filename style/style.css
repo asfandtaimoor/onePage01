@@ -21,6 +21,7 @@ body .navBar .logo h2 {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   margin-top: 20px;
+  color: white;
 }
 
 body .navBar .logo .fa {
@@ -31,11 +32,23 @@ body .navBar .logo .fa {
 
 body .navBar .nav a {
   color: black;
+  font-size: 20px;
+}
+
+body .navBar .nav a:hover {
+  background-color: rgba(240, 201, 28, 0.87);
+  color: white;
+  font-size: 25px;
 }
 
 body .main {
   width: 80%;
   margin-left: 20%;
+}
+
+body .main .home .carousel .carousel-inner .carousel-caption {
+  color: white;
+  font-size: 20px;
 }
 
 body .main .home .detail {
@@ -137,7 +150,6 @@ body .main .gallery .block .elem img {
 body .main .gallery .block .elem .text {
   color: white;
   position: absolute;
-  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -159,23 +171,21 @@ body .main .blog {
   text-align: center;
 }
 
-body .main .blog .block {
+body .main .blog .card-deck {
   margin-top: 3em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-  grid-gap: 5px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  max-width: 100%;
 }
 
-body .main .blog .block .card:hover {
+body .main .blog .card-deck .card {
+  margin: 1em 10px;
+}
+
+body .main .blog .card-deck .card:hover {
   -webkit-box-shadow: 0 0 20px #414040;
           box-shadow: 0 0 20px #414040;
 }
 
-body .main .blog .block .card .card-body a {
+body .main .blog .card-deck .card .card-body a {
   background-color: rgba(240, 201, 28, 0.87);
   border-color: rgba(240, 201, 28, 0.87);
 }
@@ -233,12 +243,11 @@ body .main .contact .text h5 {
   }
 }
 
-@media screen and (max-width: 1024px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body .navBar {
     width: 100%;
-    height: 100vh;
-    position: relative;
     height: auto;
+    position: relative;
   }
   body .navBar .logo h2 {
     left: 20px;
@@ -253,31 +262,29 @@ body .main .contact .text h5 {
   body .navBar .logo .fa-times {
     display: none;
   }
-  body .nav {
+  body .navBar .nav {
     display: none;
   }
-  .main {
+  body .main {
     margin-left: 0;
     width: 100%;
   }
-  .main .home .detail {
+  body .main .home .detail {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
   }
-  .main .about-us .block {
+  body .main .about-us .block {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
-  .main .gallery .block {
+  body .main .gallery .block {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
   }
-  .main .blog .block {
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-    grid-gap: 10px;
+  body .main .blog .card-deck .card {
+    margin: 1em auto;
   }
-  .main .contact {
+  body .main .contact {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
@@ -289,10 +296,6 @@ body .main .contact .text h5 {
         grid-template-columns: auto;
   }
   body .main .gallery .block {
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-  }
-  body .main .blog .block {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }

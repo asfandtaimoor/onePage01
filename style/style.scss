@@ -1,293 +1,302 @@
-    // Center the elem
-    @mixin center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+// Center the elem
+@mixin center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+$primaryColor:rgba(240, 201, 28, 0.87);
+$widthNavBar:20%; // width of NavBar on big screen
+$mainpageWidth:100% - 20%;
+$linkFontSize:20px;
+body {
+    margin: 0;
+    .navBar {
+        width: $widthNavBar;
+        height: 100vh;
+        position: fixed;
+        background-color: rgb(240, 240, 240);
+        z-index: 1;
+        .logo {
+            h2 {
+                background-color: $primaryColor;
+                padding: 15px;
+                border-radius: 20px;
+                font-size: 24px;
+                display: inline-block;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 20px;
+                color: white;
+            }
+            .fa {
+                font-size: 90px;
+                position: absolute;
+                display: none;
+            }
+        }
+        .nav {
+            a {
+                color: black;
+                font-size: $linkFontSize;
+                &:hover {
+                    background-color: $primaryColor;
+                    color: white;
+                    font-size: $linkFontSize + 5px;
+                }
+            }
+        }
     }
-    
-    $primaryColor:rgba(240, 201, 28, 0.87);
-    $widthNavBar:20%; // width of NavBar on big screen
-    $mainpageWidth:100% - 20%;
+    .main {
+        width: $mainpageWidth;
+        margin-left: $widthNavBar; // Pushing Right equal to nav bar
+        .home {
+            .carousel {
+                .carousel-inner {
+                    .carousel-caption {
+                        color: white;
+                        font-size: 20px;
+                    }
+                }
+            }
+            .detail {
+                padding: 20px;
+                background-color: $primaryColor;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-gap: 30px;
+                .elem {
+                    .text {
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .about-us {
+            margin-top: 5em;
+            text-align: center;
+            .block {
+                display: grid;
+                margin-top: 2em;
+                grid-template-columns: auto auto;
+                .images {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .text {
+                    padding: 2em;
+                    p {
+                        margin: 2em 0;
+                    }
+                    .btn {
+                        background-color: $primaryColor;
+                        border-color: $primaryColor;
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+        .about-us-2 {
+            margin-top: 3em;
+            .block {
+                margin: 0;
+            }
+            .images {
+                order: 2;
+            }
+            .text {
+                background-color: rgb(63, 63, 63);
+                color: white;
+                padding: 2em;
+                order: 1;
+                ul {
+                    li {
+                        margin: 2em 0;
+                    }
+                }
+            }
+        }
+        // Gallery block 
+        .gallery {
+            margin-top: 5em;
+            text-align: center;
+            .block {
+                margin-top: 3em;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-gap: 20px;
+                .elem {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                    .text {
+                        color: white;
+                        @include center();
+                        display: none;
+                    }
+                    &:hover {
+                        img {
+                            filter: brightness(30%);
+                            cursor: pointer;
+                        }
+                        .text {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+        // Blog block
+        .blog {
+            margin-top: 5em;
+            text-align: center;
+            .card-deck {
+                margin-top: 3em;
+                max-width: 100%;
+                .card {
+                    margin: 1em 10px;
+                    &:hover {
+                        box-shadow: 0 0 20px rgb(65, 64, 64);
+                    }
+                    .card-body {
+                        a {
+                            background-color: $primaryColor;
+                            border-color: $primaryColor;
+                        }
+                    }
+                }
+            }
+        }
+        // Contact
+        .contact {
+            margin-top: 5em;
+            background-color: $primaryColor;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 20px;
+            padding: 20px;
+            form {
+                background-color: white;
+                padding: 20px;
+                .name-email {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-gap: 10px;
+                }
+                button {
+                    float: right;
+                    background-color: $primaryColor;
+                    border-color: $primaryColor;
+                    font-size: 22px;
+                    padding: 10px 30px;
+                }
+            }
+            .text {
+                color: white;
+                h2 {
+                    text-align: center;
+                    margin-bottom: 2em;
+                }
+                h5 {
+                    margin-bottom: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+// For only blog block (Width=1024)==>Later solve this issue 
+@media screen and (max-width:1024px) {
     body {
-        margin: 0;
+        .main {
+            .blog {
+                .block {
+                    grid-template-columns: auto auto;
+                    grid-gap: 10px;
+                }
+            }
+        }
+    }
+}
+
+// For Tablet (Width = 768px)
+@media screen and (max-width:768px) {
+    body {
         .navBar {
-            width: $widthNavBar;
-            height: 100vh;
-            position: fixed;
-            background-color: rgb(240, 240, 240);
-            z-index: 1;
+            width: 100%;
+            height: auto;
+            position: relative;
             .logo {
                 h2 {
-                    background-color: $primaryColor;
-                    padding: 15px;
-                    border-radius: 20px;
-                    font-size: 24px;
-                    display: inline-block;
+                    left: 20px;
                     position: relative;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    margin-top: 20px;
+                    transform: translateX(0);
                 }
                 .fa {
-                    font-size: 90px;
-                    position: absolute;
+                    right: 20px;
+                    display: inline;
+                }
+                .fa-times {
                     display: none;
                 }
             }
             .nav {
-                a {
-                    color: black;
-                }
+                display: none;
             }
         }
         .main {
-            width: $mainpageWidth;
-            margin-left: $widthNavBar; // Pushing Right equal to nav bar
+            margin-left: 0;
+            width: 100%;
             .home {
                 .detail {
-                    padding: 20px;
-                    background-color: $primaryColor;
-                    display: grid;
-                    grid-template-columns: auto auto auto;
-                    grid-gap: 30px;
-                    .elem {
-                        .text {
-                            p {
-                                font-size: 15px;
-                            }
-                        }
-                    }
+                    grid-template-columns: auto auto;
                 }
             }
             .about-us {
-                margin-top: 5em;
-                text-align: center;
                 .block {
-                    display: grid;
-                    margin-top: 2em;
-                    grid-template-columns: auto auto;
-                    .images {
-                        img {
-                            width: 100%;
-                            height: auto;
-                        }
-                    }
-                    .text {
-                        padding: 2em;
-                        p {
-                            margin: 2em 0;
-                        }
-                        .btn {
-                            background-color: $primaryColor;
-                            border-color: $primaryColor;
-                            font-size: 26px;
-                        }
-                    }
+                    grid-template-columns: auto;
                 }
             }
-            .about-us-2 {
-                margin-top: 3em;
-                .block {
-                    margin: 0;
-                }
-                .images {
-                    order: 2;
-                }
-                .text {
-                    background-color: rgb(63, 63, 63);
-                    color: white;
-                    padding: 2em;
-                    order: 1;
-                    ul {
-                        li {
-                            margin: 2em 0;
-                        }
-                    }
-                }
-            }
-            // Gallery block 
             .gallery {
-                margin-top: 5em;
-                text-align: center;
                 .block {
-                    margin-top: 3em;
-                    display: grid;
-                    grid-template-columns: auto auto auto;
-                    grid-gap: 20px;
-                    .elem {
-                        position: relative;
-                        img {
-                            width: 100%;
-                            height: auto;
-                        }
-                        .text {
-                            color: white;
-                            @include center();
-                            display: none;
-                        }
-                        &:hover {
-                            img {
-                                filter: brightness(30%);
-                                cursor: pointer;
-                            }
-                            .text {
-                                display: inline;
-                            }
-                        }
-                    }
+                    grid-template-columns: auto auto;
                 }
             }
-            // Blog block
             .blog {
-                margin-top: 5em;
-                text-align: center;
-                .block {
-                    margin-top: 3em;
-                    display: grid;
-                    grid-template-columns: auto auto auto;
-                    grid-gap: 5px;
-                    justify-content: space-around;
+                .card-deck {
                     .card {
-                        &:hover {
-                            box-shadow: 0 0 20px rgb(65, 64, 64);
-                        }
-                        .card-body {
-                            a {
-                                background-color: $primaryColor;
-                                border-color: $primaryColor;
-                            }
-                        }
+                        margin: 1em auto;
                     }
                 }
             }
-            // Contact
             .contact {
-                margin-top: 5em;
-                background-color: $primaryColor;
-                display: grid;
-                grid-template-columns: auto auto;
-                grid-gap: 20px;
-                padding: 20px;
-                form {
-                    background-color: white;
-                    padding: 20px;
-                    .name-email {
-                        display: grid;
-                        grid-template-columns: auto auto;
-                        grid-gap: 10px;
-                    }
-                    button {
-                        float: right;
-                        background-color: $primaryColor;
-                        border-color: $primaryColor;
-                        font-size: 22px;
-                        padding: 10px 30px;
-                    }
-                }
-                .text {
-                    color: white;
-                    h2 {
-                        text-align: center;
-                        margin-bottom: 2em;
-                    }
-                    h5 {
-                        margin-bottom: 1.5em;
-                    }
-                }
+                grid-template-columns: auto;
             }
         }
     }
-    
-    // For only blog block (Width = 1024)  ==> Later solve this issue
-    @media screen and (max-width:1024px) {
-        body {
-            .main {
-                .blog {
-                    .block {
-                        grid-template-columns: auto auto;
-                        grid-gap: 10px;
-                    }
+}
+
+// For Mobiles (Width = 425px)
+@media screen and (max-width:425px) {
+    body {
+        .main {
+            .home {
+                .detail {
+                    grid-template-columns: auto;
                 }
             }
-        }
-        // For Tablet (Width = 768px)
-        @media screen and (max-width:768px) {
-            body {
-                .navBar {
-                    width: 100%;
-                    height: 100vh;
-                    position: relative;
-                    height: auto;
-                    .logo {
-                        h2 {
-                            left: 20px;
-                            position: relative;
-                            transform: translateX(0);
-                        }
-                        .fa {
-                            right: 20px;
-                            display: inline;
-                        }
-                        .fa-times {
-                            display: none;
-                        }
-                    }
-                }
-                .nav {
-                    display: none;
-                }
-            }
-            .main {
-                margin-left: 0;
-                width: 100%;
-                .home {
-                    .detail {
-                        grid-template-columns: auto auto;
-                    }
-                }
-                .about-us {
-                    .block {
-                        grid-template-columns: auto;
-                    }
-                }
-                .gallery {
-                    .block {
-                        grid-template-columns: auto auto;
-                    }
-                }
-                .blog {
-                    .block {
-                        grid-template-columns: auto auto;
-                        grid-gap: 10px;
-                    }
-                }
-                .contact {
+            .gallery {
+                .block {
                     grid-template-columns: auto;
                 }
             }
         }
     }
-    
-    // For Mobiles (Width = 425px)
-    @media screen and (max-width:425px) {
-        body {
-            .main {
-                .home {
-                    .detail {
-                        grid-template-columns: auto;
-                    }
-                }
-                .gallery {
-                    .block {
-                        grid-template-columns: auto;
-                    }
-                }
-                .blog {
-                    .block {
-                        grid-template-columns: auto;
-                    }
-                }
-            }
-        }
-    }
+}
