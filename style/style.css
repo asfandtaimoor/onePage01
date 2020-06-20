@@ -58,7 +58,19 @@ body .main .home .detail {
   display: grid;
   -ms-grid-columns: auto auto auto;
       grid-template-columns: auto auto auto;
-  grid-gap: 30px;
+  grid-gap: 20px;
+  color: white;
+}
+
+body .main .home .detail .elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .main .home .detail .elem i {
+  font-size: 40px;
+  margin-right: 10px;
 }
 
 body .main .home .detail .elem .text p {

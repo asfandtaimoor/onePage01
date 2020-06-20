@@ -65,8 +65,14 @@ body {
                 background-color: $primaryColor;
                 display: grid;
                 grid-template-columns: auto auto auto;
-                grid-gap: 30px;
+                grid-gap: 20px;
+                color: white;
                 .elem {
+                    display: flex;
+                    i {
+                        font-size: 40px;
+                        margin-right: 10px;
+                    }
                     .text {
                         p {
                             font-size: 15px;
