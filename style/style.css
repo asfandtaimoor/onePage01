@@ -7,9 +7,10 @@ body .navBar {
   height: 100vh;
   position: fixed;
   background-color: #f0f0f0;
+  z-index: 1;
 }
 
-body .navBar h2 {
+body .navBar .logo h2 {
   background-color: rgba(240, 201, 28, 0.87);
   padding: 15px;
   border-radius: 20px;
@@ -20,6 +21,12 @@ body .navBar h2 {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   margin-top: 20px;
+}
+
+body .navBar .logo .fa {
+  font-size: 90px;
+  position: absolute;
+  display: none;
 }
 
 body .navBar .nav a {
@@ -46,40 +53,58 @@ body .main .home .detail .elem .text p {
 }
 
 body .main .about-us {
+  margin-top: 5em;
+  text-align: center;
+}
+
+body .main .about-us .block {
   display: -ms-grid;
   display: grid;
-  margin-top: 5em;
+  margin-top: 2em;
   -ms-grid-columns: auto auto;
       grid-template-columns: auto auto;
 }
 
-body .main .about-us .images img {
+body .main .about-us .block .images img {
   width: 100%;
   height: auto;
 }
 
-body .main .about-us .block {
-  margin: 5px 20px;
+body .main .about-us .block .text {
+  padding: 2em;
 }
 
-body .main .about-us .text p {
+body .main .about-us .block .text p {
   margin: 2em 0;
 }
 
-body .main .about-us .text .btn {
+body .main .about-us .block .text .btn {
   background-color: rgba(240, 201, 28, 0.87);
   border-color: rgba(240, 201, 28, 0.87);
   font-size: 26px;
+}
+
+body .main .about-us-2 {
+  margin-top: 3em;
 }
 
 body .main .about-us-2 .block {
   margin: 0;
 }
 
+body .main .about-us-2 .images {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
 body .main .about-us-2 .text {
   background-color: #3f3f3f;
   color: white;
   padding: 2em;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 body .main .about-us-2 .text ul li {
@@ -130,8 +155,8 @@ body .main .gallery .block .elem:hover .text {
 }
 
 body .main .blog {
+  margin-top: 5em;
   text-align: center;
-  margin: 5em;
 }
 
 body .main .blog .block {
@@ -140,7 +165,9 @@ body .main .blog .block {
   display: grid;
   -ms-grid-columns: auto auto auto;
       grid-template-columns: auto auto auto;
-  grid-gap: 10px;
+  grid-gap: 5px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 body .main .blog .block .card:hover {
@@ -154,6 +181,7 @@ body .main .blog .block .card .card-body a {
 }
 
 body .main .contact {
+  margin-top: 5em;
   background-color: rgba(240, 201, 28, 0.87);
   display: -ms-grid;
   display: grid;
@@ -197,53 +225,65 @@ body .main .contact .text h5 {
   margin-bottom: 1.5em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  body .main .blog .block {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-width: 768px) {
   body .navBar {
     width: 100%;
     height: 100vh;
     position: relative;
     height: auto;
   }
-  body .navBar h2 {
+  body .navBar .logo h2 {
     left: 20px;
+    position: relative;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  body .navBar .nav {
+  body .navBar .logo .fa {
+    right: 20px;
+    display: inline;
+  }
+  body .navBar .logo .fa-times {
     display: none;
   }
-  body .main {
+  body .nav {
+    display: none;
+  }
+  .main {
     margin-left: 0;
     width: 100%;
   }
-  body .main .home .detail {
+  .main .home .detail {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
   }
-  body .main .about-us {
+  .main .about-us .block {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
-  body .main .gallery .block {
+  .main .gallery .block {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
   }
-  body .main .blog .block {
+  .main .blog .block {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
     grid-gap: 10px;
   }
-  body .main .contact {
+  .main .contact {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
 }
 
 @media screen and (max-width: 425px) {
-  body .main {
-    margin-left: 0;
-    width: 100%;
-  }
   body .main .home .detail {
     -ms-grid-columns: auto;
         grid-template-columns: auto;

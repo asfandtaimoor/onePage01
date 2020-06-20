@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/style.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
 
     <div class="navBar">
-        <h2>A_Taimoor</h2>
-        <nav class="nav nav-pills flex-row flex-sm-column">
+        <div class="logo">
+            <h2>A_Taimoor</h2>
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times"></i>
+        </div>
+        <nav class="nav nav-pills flex-row flex-sm-column" id="navigation-bar">
 
             <a class="flex-sm-fill text-sm-center nav-link " href="#home-block">HOME</a>
             <a class="flex-sm-fill text-sm-center nav-link" href="#services-block">SERVICES</a>
@@ -128,38 +134,43 @@
         <!-- About us block -->
 
         <div class="about-us about-us-1" id="about-us-block">
+            <h1>About Us</h1>
+            <div class="block">
+                <div class="elem images">
+                    <img src="https://images.unsplash.com/photo-1521488741203-dcc320950ce5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Blond girl holding diary">
 
-            <div class="block images">
-                <img src="https://images.unsplash.com/photo-1521488741203-dcc320950ce5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Blond girl holding diary">
-
-            </div>
-            <div class="block text">
-                <h2>Corrupti ullam molestiae repudiandae veritatis</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet suscipit voluptate, sint placeat, facere enim impedit ipsa consectetur eaque nostrum sit praesentium. Mollitia alias assumenda nisi nostrum a optio? Corrupti.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptates incidunt cum aliquid? Architecto obcaecati beatae, praesentium vel quis, exercitationem voluptate amet illo, officia ipsa laboriosam dolorum odit dolore itaque!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt necessitatibus voluptas officiis. Voluptatibus consequuntur eligendi velit vel voluptatum eaque! Repudiandae ducimus maiores inventore aspernatur quis, ipsum dicta facilis
-                    cum!
-                </p>
-                <button class="btn btn-primary">Read More</button>
+                </div>
+                <div class="elem text">
+                    <h2>Corrupti ullam molestiae repudiandae veritatis</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet suscipit voluptate, sint placeat, facere enim impedit ipsa consectetur eaque nostrum sit praesentium. Mollitia alias assumenda nisi nostrum a optio? Corrupti.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptates incidunt cum aliquid? Architecto obcaecati beatae, praesentium vel quis, exercitationem voluptate amet illo, officia ipsa laboriosam dolorum odit dolore itaque!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt necessitatibus voluptas officiis. Voluptatibus consequuntur eligendi velit vel voluptatum eaque! Repudiandae ducimus maiores inventore aspernatur quis, ipsum dicta
+                        facilis cum!
+                    </p>
+                    <button class="btn btn-primary">Read More</button>
+                </div>
             </div>
         </div>
 
 
         <div class="about-us about-us-2">
-            <div class="block images">
-                <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
 
-            </div>
-            <div class="block text">
-                <h2>Corrupti ullam molestiae repudiandae veritatis</h2>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet suscipit voluptate, sint placeat, facere enim impedit ipsa consectetur eaque nostrum sit praesentium. Mollitia alias assumenda nisi nostrum a optio? Corrupti.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptates incidunt cum aliquid? Architecto obcaecati beatae, praesentium vel quis, exercitationem voluptate amet illo, officia ipsa laboriosam dolorum odit dolore itaque!</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt necessitatibus voluptas officiis. Voluptatibus consequuntur eligendi velit vel voluptatum eaque! Repudiandae ducimus maiores inventore aspernatur quis, ipsum dicta
-                        facilis cum!
-                    </li>
-                </ul>
-                <button class="btn btn-primary">Read More</button>
+            <div class="block">
+                <div class="elem images">
+                    <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
+
+                </div>
+                <div class="elem text">
+                    <h2>Corrupti ullam molestiae repudiandae veritatis</h2>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet suscipit voluptate, sint placeat, facere enim impedit ipsa consectetur eaque nostrum sit praesentium. Mollitia alias assumenda nisi nostrum a optio? Corrupti.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptates incidunt cum aliquid? Architecto obcaecati beatae, praesentium vel quis, exercitationem voluptate amet illo, officia ipsa laboriosam dolorum odit dolore itaque!</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt necessitatibus voluptas officiis. Voluptatibus consequuntur eligendi velit vel voluptatum eaque! Repudiandae ducimus maiores inventore aspernatur quis, ipsum
+                            dicta facilis cum!
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">Read More</button>
+                </div>
             </div>
         </div>
 
@@ -296,7 +307,7 @@
 
 
 
-
+    <script src="script.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
