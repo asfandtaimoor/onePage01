@@ -20,12 +20,13 @@ body .navBar .logo h2 {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  margin-top: 20px;
   color: white;
+  margin-top: 8px;
 }
 
 body .navBar .logo .fa {
-  font-size: 90px;
+  margin-top: 8px;
+  font-size: 57px;
   position: absolute;
   display: none;
 }
@@ -162,6 +163,7 @@ body .main .gallery .block .elem img {
 body .main .gallery .block .elem .text {
   color: white;
   position: absolute;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -186,6 +188,7 @@ body .main .blog {
 body .main .blog .card-deck {
   margin-top: 3em;
   max-width: 100%;
+  margin-left: 0;
 }
 
 body .main .blog .card-deck .card {

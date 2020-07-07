@@ -1,10 +1,4 @@
-// Center the elem
-@mixin center {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
+@import '../../Custom_Library/Scss_Functions/functions'; // My Scss library 
 $primaryColor:rgba(240, 201, 28, 0.87);
 $widthNavBar:20%; // width of NavBar on big screen
 $mainpageWidth:100% - 20%;
@@ -27,11 +21,12 @@ body {
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
-                margin-top: 20px;
                 color: white;
+                margin-top: 8px;
             }
             .fa {
-                font-size: 90px;
+                margin-top: 8px;
+                font-size: 57px;
                 position: absolute;
                 display: none;
             }
@@ -166,6 +161,7 @@ body {
             .card-deck {
                 margin-top: 3em;
                 max-width: 100%;
+                margin-left: 0;
                 .card {
                     margin: 1em 10px;
                     &:hover {

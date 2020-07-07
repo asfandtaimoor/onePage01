@@ -7,5 +7,8 @@ $(".fa-bars").click(function() {
 
 // Hide the navBar when click on times icon and click on the link
 $(".nav-link").click(function() {
-    $(".nav-pills").hide();
+    if (screen.width < 768) {
+        $(".nav-pills").hide();
+    }
+
 });
