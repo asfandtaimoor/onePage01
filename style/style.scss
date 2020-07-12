@@ -288,6 +288,16 @@ body {
 // For Mobiles (Width = 425px)
 @media screen and (max-width:425px) {
     body {
+        .navBar {
+            .logo {
+                h2 {
+                    font-size: 16px;
+                }
+                .fa {
+                    font-size: 50px;
+                }
+            }
+        }
         .main {
             .home {
                 .detail {

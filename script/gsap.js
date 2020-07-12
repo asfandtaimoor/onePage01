@@ -20,6 +20,10 @@ let work = document.getElementById('gallery-block');
 
 let allWElement = work.getElementsByClassName('elem'); // All services Element
 
+// Cards
+
+let cards = document.getElementById('card-deck-block');
+let allCElement = cards.getElementsByClassName('card');
 
 
 
@@ -79,6 +83,25 @@ gsap.from(allWElement, {
     },
     scrollTrigger: {
         trigger: work,
+        start: 'top 80%',
+        end: 'bottom 25%'
+
+    }
+});
+
+
+// Cards
+
+gsap.from(allCElement, {
+    opacity: 0,
+    duration: 1,
+    ease: 'easeOut',
+    y: 1000,
+    stagger: {
+        each: .1
+    },
+    scrollTrigger: {
+        trigger: cards,
         start: 'top 80%',
         end: 'bottom 25%'
 

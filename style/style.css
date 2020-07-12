@@ -306,6 +306,12 @@ body .main .contact .text h5 {
 }
 
 @media screen and (max-width: 425px) {
+  body .navBar .logo h2 {
+    font-size: 16px;
+  }
+  body .navBar .logo .fa {
+    font-size: 50px;
+  }
   body .main .home .detail {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
